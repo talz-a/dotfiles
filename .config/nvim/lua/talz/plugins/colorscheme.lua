@@ -1,14 +1,5 @@
-function ColorMyPencils(color)
-	color = color or "zenburn"
-	vim.cmd.colorscheme(color)
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-    vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-end
-
 return {
     "blazkowolf/gruber-darker.nvim",
-    -- "phha/zenburn.nvim",
     lazy = false,
     priority = 1000,
     config = function()
@@ -29,6 +20,6 @@ return {
             underline = false,
         })
         vim.cmd.colorscheme("gruber-darker")
-        -- ColorMyPencils()
+        vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
     end,
 }

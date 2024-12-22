@@ -10,8 +10,6 @@ setopt hist_verify
 
 alias vim="nvim"
 alias lg="lazygit"
-alias g++="g++ -std=c++23"
-alias c++="c++ -std=c++23"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -32,19 +30,17 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 git_prompt_info() {
     local dirstatus=" OK"
-    local dirty="%{$fg[red]%} X%{$reset_color%}"
+    local dirty=" X"
     if [[ -n $(git status --porcelain 2> /dev/null | tail -n1) ]]; then
         dirstatus=$dirty
     fi
     local ref
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-    echo " %{$fg[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
+    echo " ${ref#refs/heads/}$dirstatus"
 }
-dir_info_color="%F{white}"
-dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
-promptnormal="$ %{$reset_color%}"
-promptjobs="%{$fg[red]%}φ %{$reset_color%}"
-PROMPT="${dir_info}\$(git_prompt_info) %(1j.${promptjobs}.${promptnormal})"
+dir_info="%(5~|%-1~/.../%2~|%4~)"
+promptnormal="$ "
+PROMPT="${dir_info}\$(git_prompt_info) ${promptnormal}"
 
 bindkey -v
 bindkey -s ^f "tmux-sessionizer\n"

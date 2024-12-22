@@ -3,7 +3,6 @@
   "[json]": {},
   "workbench.startupEditor": "none",
   "editor.accessibilitySupport": "off",
-
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.linkedEditing": true,
@@ -18,19 +17,11 @@
   "editor.fontFamily": "Iosevka Nerd Font Mono",
   "apc.font.family": "Iosevka Nerd Font Mono",
   "editor.fontSize": 20,
-
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": "on",
-
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-
-  "workbench.sideBar.location": "right",
-
   "window.zoomLevel": 0.5,
   "editor.stickyScroll.enabled": true,
-
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "non-relative",
@@ -152,5 +143,5 @@
       "commands": ["editor.action.moveLinesUpAction"]
     }
   ],
-  "workbench.colorTheme": "Zenburn"
+  "workbench.colorTheme": "Gruber Darker"
 }
