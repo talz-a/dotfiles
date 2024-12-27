@@ -1,0 +1,12 @@
+font-family = Iosevka Nerd Font Mono
+font-size = 24
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+background = #181818
+window-padding-x = 10
+window-padding-y = 10
+window-vsync = false
+mouse-hide-while-typing
+macos-titlebar-style = hidden
+title = " "

@@ -12,12 +12,12 @@ key-mapping.preset = 'qwerty'
 on-focus-changed = "move-mouse window-lazy-center"
 
 [gaps]
-inner.horizontal = 8
-inner.vertical =   8
-outer.left =       8
-outer.bottom =     8
-outer.top =        8
-outer.right =      8
+inner.horizontal = 6
+inner.vertical =   6
+outer.left =       6
+outer.bottom =     6
+outer.top =        6
+outer.right =      6
 
 [mode.main.binding]
 alt-slash = 'layout tiles horizontal vertical'
@@ -70,7 +70,7 @@ if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace 1' 
 
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
+if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 2' 
 
 [[on-window-detected]]
