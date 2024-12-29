@@ -4,15 +4,14 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Left ctrl + hjkl to arrow keys Vim - not in Alacritty, Kitty, or Ghostty",
+                        "description": "Left ctrl + hjkl to arrow keys Vim - not in Alacritty or Kitty",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
                                             "^org\\.alacritty$",
-                                            "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.mitchellh\\.ghostty$"
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -32,8 +31,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^org\\.alacritty$",
-                                            "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.mitchellh\\.ghostty$"
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -53,8 +51,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^org\\.alacritty$",
-                                            "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.mitchellh\\.ghostty$"
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -74,8 +71,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "^org\\.alacritty$",
-                                            "^net\\.kovidgoyal\\.kitty$",
-                                            "^com\\.mitchellh\\.ghostty$"
+                                            "^net\\.kovidgoyal\\.kitty$"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
