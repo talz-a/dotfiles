@@ -59,18 +59,18 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 zle-line-init() {
-    zle -K viins 
+    zle -K viins
     echo -ne "\e[6 q"
 }
 zle -N zle-line-init
-echo -ne '\e[6 q' 
-preexec() { echo -ne '\e[6 q' ;} 
+echo -ne '\e[6 q'
+preexec() { echo -ne '\e[6 q' ;}
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh
 
