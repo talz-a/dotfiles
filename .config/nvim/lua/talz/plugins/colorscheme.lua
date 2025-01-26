@@ -1,13 +1,8 @@
 return {
-    "olivercederborg/poimandres.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-        require("poimandres").setup {
-            disable_background = true,
-            disable_float_background = true,
-            disable_italics = true,
-        }
-        vim.cmd.colorscheme("poimandres")
-    end,
+	"pustota-theme/pustota.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		vim.cmd.colorscheme("pustota")
+	end,
 }

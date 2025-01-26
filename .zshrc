@@ -1,3 +1,5 @@
+autoload -U colors; colors;
+
 export HISTFILE=$HOME/.zhistory
 export SAVEHIST=1000
 export HISTSIZE=999
@@ -12,6 +14,7 @@ alias vim="nvim"
 alias lg="lazygit"
 alias ls="ls -G"
 alias ll="ls -lG"
+alias pn="pnpm"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -30,19 +33,28 @@ export PATH=$PATH:$GOBIN
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+export PNPM_HOME="/Users/talal/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+setopt prompt_subst
 git_prompt_info() {
-    local dirstatus=" OK"
-    local dirty=" X"
-    if [[ -n $(git status --porcelain 2> /dev/null | tail -n1) ]]; then
-        dirstatus=$dirty
-    fi
-    local ref
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-    echo " ${ref#refs/heads/}$dirstatus"
+  local dirstatus=" OK"
+  local dirty="%{$fg_bold[red]%} X%{$reset_color%}"
+  if [[ ! -z $(git status --porcelain 2> /dev/null | tail -n1) ]]; then
+    dirstatus=$dirty
+  fi
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  echo " %{$fg_bold[green]%}${ref#refs/heads/}$dirstatus%{$reset_color%}"
 }
-dir_info="%(5~|%-1~/.../%2~|%4~)"
-promptnormal="$ "
-PROMPT="${dir_info}\$(git_prompt_info) ${promptnormal}"
+local dir_info_color="%B"
+local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
+local promptnormal="$ %{$reset_color%}"
+local promptjobs="%{$fg_bold[red]%}φ %{$reset_color%}"
+PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
 
 bindkey -v
 export KEYTIMEOUT=1
@@ -70,7 +82,7 @@ bindkey -s ^f "tmux-sessionizer\n"
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
-# source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh/plugins/zsh-system-clipboard/zsh-system-clipboard.zsh
 

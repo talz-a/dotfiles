@@ -9,17 +9,17 @@
   "editor.inlineSuggest.enabled": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": false,
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "update.showReleaseNotes": false,
   "zenMode.hideLineNumbers": false,
-  "editor.fontFamily": "Iosevka Nerd Font Mono",
-  "apc.font.family": "Iosevka Nerd Font Mono",
-  "editor.fontSize": 20,
+  "editor.fontSize": 22,
   "breadcrumbs.enabled": false,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
+  "workbench.sideBar.location": "right",
   "window.zoomLevel": 0.5,
   "editor.stickyScroll.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -35,7 +35,6 @@
     "typescript",
     "typescriptreact"
   ],
-
   "vim.useSystemClipboard": true,
   "vim.leader": "<Space>",
   "vim.hlsearch": true,
@@ -142,6 +141,5 @@
       "before": ["K"],
       "commands": ["editor.action.moveLinesUpAction"]
     }
-  ],
-  "workbench.colorTheme": "Gruber Darker"
+  ]
 }
