@@ -1,4 +1,4 @@
 return {
-	"cappyzawa/trim.nvim",
-	config = true,
+    "cappyzawa/trim.nvim",
+    config = true,
 }

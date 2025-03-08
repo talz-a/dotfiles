@@ -1,11 +1,10 @@
-font-family = Hack Nerd Font Mono
-font-size = 24
+font-family = Iosevka Nerd Font Mono
+font-size = 19
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
-background = #0A0E14
+background = #111111
 window-padding-x = 10
 window-padding-y = 10
-macos-titlebar-proxy-icon = hidden
 mouse-hide-while-typing
-title = " "
+macos-titlebar-proxy-icon = hidden
