@@ -1,4 +1,4 @@
-vim.g.colors_name = "default_override"
+vim.g.colors_name = "defaults_override"
 
 -- Default colours are defined in
 -- https://github.com/neovim/neovim/blob/master/src/nvim/highlight_group.c.
@@ -45,7 +45,8 @@ local highlights = {
 
     WildMenu = { fg = "NvimLightGrey3", bg = "None" },
 
-    Function = { fg = "Yellow2" },
+    Keyword = { fg = "SteelBlue1", bold = true },
+    Function = { fg = "NvimLightGrey2" },
     Type = { fg = "LightGoldenrod" },
     Comment = { fg = "#6a6a6a" },
     Special = { link = "Function" },

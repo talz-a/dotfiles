@@ -1,4 +1,4 @@
-font-family = Iosevka Nerd Font Mono
+font-family = Monaco Nerd Font Mono
 font-size = 19
 font-feature = -calt
 font-feature = -liga
@@ -8,3 +8,4 @@ window-padding-x = 10
 window-padding-y = 10
 mouse-hide-while-typing
 macos-titlebar-proxy-icon = hidden
+window-step-resize = true

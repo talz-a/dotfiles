@@ -7,7 +7,6 @@ vim.keymap.set("n", "<leader>q", ":bdelete<cr>", { noremap = true, silent = true
 vim.keymap.set("n", "<leader>Q", ":xa<cr>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "x", '"_x')
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
