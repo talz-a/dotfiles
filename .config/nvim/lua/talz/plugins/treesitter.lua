@@ -3,6 +3,7 @@ return {
     build = ":TSUpdate",
     dependencies = "RRethy/nvim-treesitter-endwise",
     config = function()
+        ---@diagnostic disable-next-line: missing-fields
         require("nvim-treesitter.configs").setup({
             endwise = {
                 enable = true,

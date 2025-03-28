@@ -30,20 +30,13 @@ vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a'
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
-vim.opt.formatoptions:remove("o")
+vim.opt.formatoptions:remove "o"
 vim.opt.cinoptions:append("L0")
+
+vim.diagnostic.config({ virtual_text = true })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank()
     end,
 })
-
-vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
-
--- vim.api.nvim_create_autocmd("BufWritePre", {
---     pattern = "*",
---     callback = function()
---         vim.lsp.buf.format({ timeout_ms = 1000 })
---     end,
--- })

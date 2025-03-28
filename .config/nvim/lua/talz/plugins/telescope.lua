@@ -30,10 +30,11 @@ return {
             },
         })
         require("telescope").load_extension("fzf")
-        vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-        vim.keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>")
-        vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
-        vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
+        local builtin = require "telescope.builtin"
+        vim.keymap.set("n", "<leader>ff", builtin.find_files)
+        vim.keymap.set("n", "<leader>fr", builtin.oldfiles)
+        vim.keymap.set("n", "<leader>fs", builtin.live_grep)
+        vim.keymap.set("n", "<leader>fc", builtin.grep_string)
         vim.keymap.set("n", "<leader>k", function()
             require("telescope.builtin").buffers(require("telescope.themes").get_ivy({
                 sort_mru = true,
