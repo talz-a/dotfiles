@@ -10,9 +10,6 @@ return {
             ["<C-j>"] = { "select_next", "fallback" },
             ["<C-k>"] = { "select_prev", "fallback" },
         },
-        appearance = {
-            nerd_font_variant = "mono"
-        },
         completion = {
             list = { selection = { preselect = false, auto_insert = true } },
             documentation = { auto_show = false }

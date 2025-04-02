@@ -1,5 +1,4 @@
 return {
-    -- "pmouraguedes/neodarcula.nvim",
     "rainstf/zenburn-m",
     lazy = false,
     priority = 1000,
