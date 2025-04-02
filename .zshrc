@@ -10,13 +10,12 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-bindkey -v
-
 alias vim="nvim"
 alias lg="lazygit"
 alias ls="ls -G"
 alias ll="ls -lG"
 alias pn="pnpm"
+alias tk="tmux kill-server"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -44,7 +43,6 @@ case ":$PATH:" in
 esac
 
 export PATH="$PATH:${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
-
 
 setopt prompt_subst
 git_prompt_info() {
@@ -85,7 +83,6 @@ zle -N zle-line-init
 echo -ne '\e[6 q'
 preexec() { echo -ne '\e[6 q' ;}
 
-
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
@@ -93,5 +90,6 @@ bindkey '^[[B' history-search-forward
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-system-clipboard/zsh-system-clipboard.zsh
+[ -s "/Users/talal/.bun/_bun" ] && source "/Users/talal/.bun/_bun"
 
 eval "$(fzf --zsh)"

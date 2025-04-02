@@ -28,11 +28,6 @@ return {
                     capabilities = require("blink.cmp").get_lsp_capabilities()
                 })
             end,
-            ["elixirls"] = function()
-                require("lspconfig").elixirls.setup({
-                    cmd = { "/Users/talal/.local/share/nvim/mason/packages/elixir-ls/language_server.sh" },
-                })
-            end,
         })
     end,
 }
