@@ -20,6 +20,7 @@ return {
                 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 })
                 vim.keymap.set("n", "<leader>D", builtin.diagnostics, { buffer = 0 })
                 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { buffer = 0 })
+                vim.keymap.set("n", "<space>wd", builtin.lsp_document_symbols, { buffer = 0 })
             end,
         })
         require("mason-lspconfig").setup_handlers({
