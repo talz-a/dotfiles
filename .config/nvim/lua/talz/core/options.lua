@@ -32,14 +32,14 @@ vim.opt.linebreak = true
 
 vim.opt.cinoptions:append("L0")
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_text = { current_line = true } })
 
 vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
 vim.api.nvim_command("autocmd VimResized * wincmd =")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
