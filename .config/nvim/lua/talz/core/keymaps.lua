@@ -2,6 +2,13 @@ vim.keymap.set("n", "i", function()
 	return string.match(vim.api.nvim_get_current_line(), "%g") == nil and "cc" or "i"
 end, { expr = true, noremap = true })
 
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end)
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end)
+
 vim.keymap.set("n", "<leader>w", ":w<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>q", ":bdelete<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>Q", ":xa<cr>", { noremap = true, silent = true })
