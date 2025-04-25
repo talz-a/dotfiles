@@ -18,11 +18,6 @@ vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
-vim.keymap.set("n", "<leader>sv", "<C-w>v")
-vim.keymap.set("n", "<leader>sh", "<C-w>s")
-vim.keymap.set("n", "<leader>se", "<C-w>=")
-vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>")
-
 vim.keymap.set("n", "<leader>+", "<Cmd>vertical resize +5<CR>")
 vim.keymap.set("n", "<leader>-", "<Cmd>vertical resize -5<CR>")
 
@@ -35,9 +30,9 @@ vim.keymap.set("v", "P", '"_dP')
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
-vim.keymap.set("i", "<C-j>", "<C-n>", { noremap = true, silent = true })
-vim.keymap.set("i", "<C-k>", "<C-p>", { noremap = true, silent = true })
-vim.keymap.set("c", "<C-j>", "<C-n>", { noremap = true, silent = true })
-vim.keymap.set("c", "<C-k>", "<C-p>", { noremap = true, silent = true })
+-- vim.keymap.set("i", "<C-j>", "<C-n>", { noremap = true, silent = true })
+-- vim.keymap.set("i", "<C-k>", "<C-p>", { noremap = true, silent = true })
+-- vim.keymap.set("c", "<C-j>", "<C-n>", { noremap = true, silent = true })
+-- vim.keymap.set("c", "<C-k>", "<C-p>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

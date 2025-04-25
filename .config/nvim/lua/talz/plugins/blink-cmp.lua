@@ -7,24 +7,10 @@ return {
 	opts = {
 		keymap = {
 			preset = "default",
-			["<C-j>"] = {
-				function(cmp)
-					if cmp.is_menu_visible() then
-						cmp.select_next()
-					else
-						cmp.show()
-						vim.defer_fn(function()
-							cmp.select_next()
-						end, 10)
-					end
-				end,
-			},
+			["<C-j>"] = { "select_next", "fallback" },
 			["<C-k>"] = { "select_prev", "fallback" },
 		},
 		completion = {
-			menu = {
-				auto_show = false,
-			},
 			trigger = {
 				show_on_insert_on_trigger_character = false,
 			},

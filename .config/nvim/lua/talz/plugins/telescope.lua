@@ -17,17 +17,16 @@ return {
 					i = {
 						["<C-k>"] = require("telescope.actions").move_selection_previous,
 						["<C-j>"] = require("telescope.actions").move_selection_next,
-						["<C-q>"] = require("telescope.actions").send_selected_to_qflist
-							+ require("telescope.actions").open_qflist,
 					},
 				},
 			},
 			pickers = {
-				oldfiles = { disable_devicons = true, theme = "dropdown" },
-				find_files = { disable_devicons = true, theme = "dropdown" },
-				live_grep = { disable_devicons = true, theme = "dropdown" },
-				grep_string = { disable_devicons = true, theme = "dropdown" },
+				oldfiles = { disable_devicons = true, theme = "ivy" },
+				find_files = { disable_devicons = true, theme = "ivy" },
+				live_grep = { disable_devicons = true, theme = "ivy" },
+				grep_string = { disable_devicons = true, theme = "ivy" },
 			},
+			extensions = {},
 		})
 		require("telescope").load_extension("fzf")
 		local builtin = require("telescope.builtin")

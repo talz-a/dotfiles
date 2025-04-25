@@ -18,6 +18,7 @@ alias ls="ls -G"
 alias ll="ls -lG"
 alias pn="pnpm"
 alias tk="tmux kill-server"
+alias emacs="emacsclient -c -a 'emacs'"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -46,6 +47,8 @@ esac
 
 export PATH="$PATH:${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
 
+export PATH="$HOME/.emacs.d/bin/:$PATH"
+
 setopt prompt_subst
 git_prompt_info() {
   local dirstatus=" OK"
@@ -62,6 +65,27 @@ local dir_info="%{$dir_info_color%}%(5~|%-1~/.../%2~|%4~)%{$reset_color%}"
 local promptnormal="$ %{$reset_color%}"
 local promptjobs="%{$fg_bold[red]%}$ %{$reset_color%}"
 PROMPT='${dir_info}$(git_prompt_info) %(1j.$promptjobs.$promptnormal)'
+
+# export KEYTIMEOUT=1
+# function zle-keymap-select {
+#   if [[ ${KEYMAP} == vicmd ]] ||
+#      [[ $1 = 'block' ]]; then
+#     echo -ne '\e[2 q'
+#   elif [[ ${KEYMAP} == main ]] ||
+#        [[ ${KEYMAP} == viins ]] ||
+#        [[ ${KEYMAP} = '' ]] ||
+#        [[ $1 = 'beam' ]]; then
+#     echo -ne '\e[6 q'
+#   fi
+# }
+# zle -N zle-keymap-select
+# zle-line-init() {
+#   zle -K viins
+#   echo -ne "\e[6 q"
+# }
+# zle -N zle-line-init
+# echo -ne '\e[6 q'
+# preexec() { echo -ne '\e[6 q' ;}
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey '^[[A' history-search-backward

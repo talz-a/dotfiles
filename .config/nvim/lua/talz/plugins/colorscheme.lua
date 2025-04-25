@@ -1,10 +1,21 @@
 return {
-	"rainstf/zenburn-m",
+	"maxmx03/solarized.nvim",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme("zenburn-m")
-		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		require("solarized").setup({
+			styles = {
+				enabled = true,
+				types = { italic = false },
+				functions = { italic = false },
+				parameters = { italic = false },
+				comments = { italic = false },
+				strings = { italic = false },
+				keywords = { italic = false },
+				variables = { italic = false },
+				constants = { italic = false },
+			},
+		})
+		vim.cmd.colorscheme("solarized")
 	end,
 }
