@@ -13,6 +13,6 @@ if not vim.uv.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup({ { import = "talz.plugins" } }, {
+require("lazy").setup({ { import = "plugins" } }, {
 	change_detection = { notify = false },
 })

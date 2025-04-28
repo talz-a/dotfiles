@@ -1,2 +1,2 @@
-require("talz.core")
-require("talz.lazy")
+require("core")
+require("config.lazy")

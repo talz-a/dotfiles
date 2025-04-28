@@ -5,8 +5,8 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
-vim.opt.guicursor = "a:block-Cursor/lCursor"
--- vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci:ver25-Cursor/lCursor"
+-- vim.opt.guicursor = "a:block-Cursor/lCursor"
+vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci:ver25-Cursor/lCursor"
 
 vim.opt.number = true
 vim.opt.relativenumber = true
