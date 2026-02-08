@@ -1,0 +1,10 @@
+font-size = 12
+# font-family = Lucida Console
+font-family = Consolas
+window-padding-balance = true
+background = #292929
+window-decoration = server
+gtk-tabs-location = hidden
+confirm-close-surface = false
+font-thicken
+mouse-hide-while-typing = true

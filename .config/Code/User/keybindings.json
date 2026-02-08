@@ -1,0 +1,196 @@
+[
+  // Remove keybinds.
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile",
+  },
+
+  // Focus editor.
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorFocus",
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.toggleSidebarVisibility",
+  },
+
+  // Terminal navigation.
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.togglePanel",
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalIsOpen && terminalFocus",
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalIsOpen && terminalFocus",
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalIsOpen && terminalFocus",
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalIsOpen && terminalFocus",
+  },
+
+  // Navigate popups.
+  {
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible",
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible",
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible",
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible",
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen",
+  },
+  {
+    "key": "ctrl+y",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible",
+  },
+
+  // Scroll popups.
+  {
+    "key": "h",
+    "command": "editor.action.scrollLeftHover",
+    "when": "editorHoverFocused",
+  },
+  {
+    "key": "j",
+    "command": "editor.action.scrollDownHover",
+    "when": "editorHoverFocused",
+  },
+  {
+    "key": "k",
+    "command": "editor.action.scrollUpHover",
+    "when": "editorHovered",
+  },
+  {
+    "key": "l",
+    "command": "editor.action.scrollRightHover",
+    "when": "editorHoverFocused",
+  },
+
+  // File tree.
+  {
+    "command": "workbench.view.explorer",
+    "key": "ctrl+shift+e",
+  },
+  {
+    "command": "workbench.files.action.refreshFilesExplorer",
+    "key": "ctrl+shift+r",
+    "when": "filesExplorerFocus",
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+
+  // Search function.
+  {
+    "key": "ctrl+h",
+    "command": "actions.find",
+    "when": "editorFocus && editorIsOpen",
+  },
+  {
+    "key": "ctrl+h",
+    "command": "closeFindWidget",
+    "when": "editorFocus && editorIsOpen && findWidgetVisible",
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorFocus && editorIsOpen",
+  },
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus && findWidgetVisible",
+  },
+  {
+    "key": "ctrl+p",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus && findWidgetVisible",
+  },
+  {
+    "key": "ctrl+e",
+    "command": "toggleFindCaseSensitive",
+    "when": "editorFocus && findWidgetVisible",
+  },
+  {
+    "key": "ctrl+w",
+    "command": "toggleFindWholeWord",
+    "when": "editorFocus && findWidgetVisible",
+  },
+  {
+    "key": "ctrl+r",
+    "command": "toggleFindRegex",
+    "when": "editorFocus && findWidgetVisible",
+  },
+]

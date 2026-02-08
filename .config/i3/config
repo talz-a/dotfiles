@@ -1,0 +1,126 @@
+set $mod Mod4
+
+exec_always --no-startup-id autorandr --change
+
+exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+
+font pango:Consolas 11
+
+exec --no-startup-id dex-autostart --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+# exec --no-startup-id pasystray
+exec --no-startup-id picom -b
+
+set $refresh_i3status killall -SIGUSR1 i3status
+
+exec_always --no-startup-id xinput set-prop "SYNA8022:00 06CB:CE67 Touchpad" "libinput Tapping Enabled" 1
+
+exec_always --no-startup-id xinput set-prop "SYNA8022:00 06CB:CE67 Touchpad" "libinput Natural Scrolling Enabled" 1
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+floating_modifier $mod
+
+bindsym $mod+Return exec ghostty
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Consolas-11' -nb '#222222' -nf '#BBBBBB' -sb '#005577' -sf '#EEEEEE'"
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+s split h
+bindsym $mod+v split v
+
+bindsym $mod+m fullscreen toggle
+
+bindsym $mod+x layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+bindsym $mod+Shift+e exec i3-msg exit
+
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+client.focused          #83CAFA #51A2DA #FFFFFF #83CAFA   #51A2DA
+client.focused_inactive #8C8C8C #4C4C4C #FFFFFF #4C4C4C   #8C8C8C
+client.unfocused        #4C4C4C #222222 #888888 #292D2E   #222222
+client.urgent           #EC69A0 #DB3279 #FFFFFF #DB3279   #DB3279
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+client.background       #FFFFFF
+bar {
+    colors {
+        background #000000
+        statusline #FFFFFF
+        separator  #666666
+        focused_workspace  #83CAFA #51A2DA #FFFFFF
+        active_workspace   #3C6EB4 #294172 #FFFFFF
+        inactive_workspace #8C8C8C #4C4C4C #888888
+        urgent_workspace   #EC69A0 #DB3279 #FFFFFF
+        binding_mode       #b691d3 #A07CBC #FFFFFF
+    }
+    status_command i3status
+}
